@@ -1,0 +1,790 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #18204a,
+            #070914 60%
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+nav {
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+.hero {
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 70px 10%;
+
+    gap: 50px;
+
+}
+
+
+.hero-content {
+
+    max-width: 650px;
+
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    margin-bottom: 25px;
+
+}
+
+
+h1 {
+
+    font-size: 60px;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+}
+
+
+h1 span {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c7cff,
+            #00e0ff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #b9bfd9;
+
+    margin-bottom: 35px;
+
+}
+
+
+.primary-btn {
+
+    display: inline-block;
+
+    border: none;
+
+    padding: 16px 28px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5b5cff,
+            #00c8ff
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+.animal-card {
+
+    width: 320px;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    text-align: center;
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.animal {
+
+    font-size: 100px;
+
+}
+
+
+.sound-wave {
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.sound-wave span {
+
+    width: 7px;
+
+    height: 30px;
+
+    background: #00d9ff;
+
+    border-radius: 10px;
+
+    animation:
+        wave 1s infinite alternate;
+
+}
+
+
+.sound-wave span:nth-child(2) {
+    height: 50px;
+}
+
+.sound-wave span:nth-child(3) {
+    height: 70px;
+}
+
+.sound-wave span:nth-child(4) {
+    height: 45px;
+}
+
+
+@keyframes wave {
+
+    from {
+        transform: scaleY(.5);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+
+}
+
+
+.features {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 50px;
+
+}
+
+
+.feature {
+
+    width: 250px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border-radius: 20px;
+
+}
+
+
+.feature h3 {
+
+    margin: 15px 0;
+
+}
+
+
+.translator-container {
+
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 40px;
+
+}
+
+
+.translator-container h1 {
+
+    font-size: 42px;
+
+}
+
+
+.subtitle {
+
+    color: #aaa;
+
+    margin-bottom: 35px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+
+}
+
+
+select,
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #333;
+
+    background: #111527;
+
+    color: white;
+
+}
+
+
+textarea {
+
+    height: 120px;
+
+    resize: vertical;
+
+}
+
+
+form .primary-btn {
+
+    margin-top: 25px;
+
+}
+
+
+.result {
+
+    margin-top: 40px;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.translation {
+
+    font-size: 25px;
+
+    margin: 25px 0;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: rgba(0,0,0,0.3);
+
+}
+
+
+.loading {
+
+    text-align: center;
+
+    padding: 40px;
+
+    font-size: 20px;
+
+}
+
+
+.loader {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 4px solid #333;
+
+    border-top-color: #00d9ff;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+    margin: 20px auto;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+/* =====================================
+   VOICE TRANSLATOR
+===================================== */
+
+.voice-box {
+
+    margin-top: 30px;
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background: rgba(70, 80, 255, 0.10);
+
+    border: 1px solid rgba(120, 130, 255, 0.30);
+
+}
+
+
+.speaker-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.voice-box h3 {
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.voice-status {
+
+    opacity: 0.75;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================
+   SOUND WAVE
+===================================== */
+
+.voice-animation {
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 20px 0;
+
+}
+
+
+.voice-animation span {
+
+    display: block;
+
+    width: 7px;
+
+    height: 18px;
+
+    border-radius: 10px;
+
+    background: #00d9ff;
+
+}
+
+
+/* Animate only while speaking */
+
+.voice-animation.speaking span {
+
+    animation:
+        voiceWave 0.5s infinite
+        alternate;
+
+}
+
+
+.voice-animation.speaking span:nth-child(1) {
+
+    animation-delay: 0s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(2) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(3) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(4) {
+
+    animation-delay: 0.3s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(5) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(6) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+.voice-animation.speaking span:nth-child(7) {
+
+    animation-delay: 0s;
+
+}
+
+
+@keyframes voiceWave {
+
+    0% {
+
+        height: 15px;
+
+    }
+
+    100% {
+
+        height: 55px;
+
+    }
+
+}
+
+
+/* =====================================
+   VOICE BUTTON
+===================================== */
+
+.voice-button {
+
+    border: none;
+
+    padding: 15px 28px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5b5cff,
+            #00c8ff
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.voice-button:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =====================================
+   DISCLAIMER
+===================================== */
+
+.disclaimer {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    opacity: 0.55;
+
+}
+
+
+/* =====================================
+   HIDDEN
+===================================== */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================
+   LOADING
+===================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.ai-orb {
+
+    font-size: 65px;
+
+    animation:
+        aiPulse 1s infinite;
+
+}
+
+
+@keyframes aiPulse {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =====================================
+   LOADING BARS
+===================================== */
+
+.loading-bars {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 20px;
+
+}
+
+
+.loading-bars span {
+
+    width: 6px;
+
+    height: 25px;
+
+    border-radius: 5px;
+
+    background: #00d9ff;
+
+    animation:
+        loading 0.8s infinite
+        alternate;
+
+}
+
+
+.loading-bars span:nth-child(2) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+.loading-bars span:nth-child(3) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.loading-bars span:nth-child(4) {
+
+    animation-delay: 0.3s;
+
+}
+
+
+.loading-bars span:nth-child(5) {
+
+    animation-delay: 0.4s;
+
+}
+
+
+@keyframes loading {
+
+    from {
+
+        height: 15px;
+
+    }
+
+    to {
+
+        height: 40px;
+
+    }
+
+}

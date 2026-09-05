@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AnimalTalk AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        🐾 AnimalTalk AI
+    </div>
+
+    <a href="/">
+        Home
+    </a>
+
+</nav>
+
+
+<div class="translator-container">
+
+    <div class="badge">
+        🧠 ANIMAL COMMUNICATION SYSTEM
+    </div>
+
+    <h1>
+        What is your animal saying?
+    </h1>
+
+    <p class="subtitle">
+        Upload an animal sound and let AI decode it.
+    </p>
+
+
+    <!-- ========================= -->
+    <!-- INPUT SECTION -->
+    <!-- ========================= -->
+
+    <div id="inputSection">
+
+        <form id="translatorForm"
+              enctype="multipart/form-data">
+
+            <label>
+                🐾 Select Animal
+            </label>
+
+            <select name="animal" id="animal">
+
+                <option value="dog">
+                    🐶 Dog
+                </option>
+
+                <option value="cat">
+                    🐱 Cat
+                </option>
+
+                <option value="bird">
+                    🐦 Bird
+                </option>
+
+                <option value="cow">
+                    🐮 Cow
+                </option>
+
+            </select>
+
+
+            <label>
+                🎙️ Upload Animal Sound
+            </label>
+
+            <input
+                type="file"
+                name="audio"
+                id="audio"
+                accept="audio/*"
+                required
+            >
+
+
+            <label>
+                📝 What was happening? <span>(optional)</span>
+            </label>
+
+            <textarea
+                name="context"
+                id="context"
+                placeholder="Example: My dog was barking at the door..."
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                🧠 ANALYZE SOUND
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- LOADING SECTION -->
+    <!-- ========================= -->
+
+    <div id="loading"
+         class="loading hidden">
+
+        <div class="ai-orb">
+            🧠
+        </div>
+
+        <h2>
+            AI IS LISTENING...
+        </h2>
+
+        <p>
+            Decoding animal communication
+        </p>
+
+        <div class="loading-bars">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- RESULT SECTION -->
+    <!-- ========================= -->
+
+    <div id="result"
+         class="result hidden">
+
+
+        <div id="animalEmoji"
+             class="result-animal">
+            🐶
+        </div>
+
+
+        <h2>
+            TRANSLATION COMPLETE
+        </h2>
+
+
+        <div class="emotion-box">
+
+            <span>
+                DETECTED MOOD
+            </span>
+
+            <strong id="emotion">
+            </strong>
+
+        </div>
+
+
+        <!-- VOICE AREA -->
+
+        <div class="voice-box">
+
+            <div class="speaker-icon"
+                 id="speakerIcon">
+
+                🔊
+
+            </div>
+
+
+            <h3>
+                YOUR ANIMAL IS SPEAKING...
+            </h3>
+
+
+            <p class="voice-status"
+               id="voiceStatus">
+
+                Preparing Malayalam translation...
+
+            </p>
+
+
+            <!-- Animated sound waves -->
+
+            <div class="voice-animation"
+                 id="voiceAnimation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <!-- Manual replay -->
+
+            <button
+                id="speakButton"
+                class="voice-button">
+
+                🔊 PLAY AGAIN
+
+            </button>
+
+        </div>
+
+
+        <p class="disclaimer">
+
+            🤖 AI-generated humorous interpretation.
+            Not an actual animal translation.
+
+        </p>
+
+
+        <button
+            class="secondary-btn"
+            onclick="location.reload()">
+
+            🐾 TRANSLATE ANOTHER SOUND
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
