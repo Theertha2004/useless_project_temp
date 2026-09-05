@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "ANIMAL2HUMAN",
+			"path": ".."
+		},
+		{
+			"name": "ANIMAL2HUMAN",
+			"path": "../ANIMAL2HUMAN"
+		}
+	],
+	"settings": {}
+}
