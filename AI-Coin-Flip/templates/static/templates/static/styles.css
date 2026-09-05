@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b14;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #171725;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #252538;
+    color: white;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #6c63ff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #857dff;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 25px;
+    background: #171725;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#coin {
+    font-size: 70px;
+    margin: 15px;
+}
+
+#prediction {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.probabilities {
+    color: #ccc;
+}

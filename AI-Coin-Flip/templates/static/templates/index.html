@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Coin Flip Predictor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🪙 AI Coin Flip Predictor</h1>
+
+        <p class="subtitle">
+            Making a simple coin toss unnecessarily intelligent.
+        </p>
+
+        <div class="card">
+
+            <label>Coin Type</label>
+
+            <select id="coinType">
+                <option value="normal">Normal</option>
+                <option value="heavy">Heavy</option>
+                <option value="light">Light</option>
+            </select>
+
+
+            <label>Initial Side</label>
+
+            <select id="initialSide">
+                <option value="heads">Heads</option>
+                <option value="tails">Tails</option>
+            </select>
+
+
+            <label>Flip Height (cm)</label>
+
+            <input
+                type="number"
+                id="height"
+                value="100"
+                min="1"
+            >
+
+
+            <label>Force (%)</label>
+
+            <input
+                type="number"
+                id="force"
+                value="50"
+                min="1"
+                max="100"
+            >
+
+
+            <label>Rotation Count</label>
+
+            <input
+                type="number"
+                id="rotations"
+                value="10"
+                min="1"
+            >
+
+
+            <button id="predictButton">
+                PREDICT 🪙
+            </button>
+
+        </div>
+
+
+        <div id="resultSection" class="result hidden">
+
+            <h2>Prediction</h2>
+
+            <div id="coin">
+                🪙
+            </div>
+
+            <h3 id="prediction">
+                --
+            </h3>
+
+            <div class="probabilities">
+
+                <p>
+                    Heads:
+                    <span id="headsProbability">--</span>%
+                </p>
+
+                <p>
+                    Tails:
+                    <span id="tailsProbability">--</span>%
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
