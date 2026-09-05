@@ -124,4 +124,4 @@ def history():
 if __name__ == "__main__":
     create_database()
 
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
