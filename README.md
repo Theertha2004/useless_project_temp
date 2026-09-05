@@ -2,20 +2,20 @@
 
 
 
-# [Project Name] 🎯
+# [AI COIN PREDICTION] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [404]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+
+- Member 1: [THEERTHA MANOJ] - [SSET]
+- Member 2: [ANAM MANSUR] - [SSET]
 
 ### Project Description
-[2-3 lines about what your project does]
+[AI Coin Flip Predictor is a fun and experimental AI-based project that predicts the outcome of a coin toss using factors such as coin type, initial side, flip height, force, and rotation count. The system learns from previous flip results and provides a probability-based prediction, making a simple coin toss unnecessarily intelligent and entertaining.]
 
 ### The Problem (that doesn't exist)
 [What ridiculous problem are you solving?]
