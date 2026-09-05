@@ -1,106 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <title>AnimalTalk AI</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 AnimalTalk AI - Cute Cartoon Pet Translator ✨</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
 <nav>
-
     <div class="logo">
-        🐾 AnimalTalk AI
+        <span>🐾</span> AnimalTalk AI
     </div>
-
     <a href="/translator">
-        Translator
+        🐾 Translator 🚀
     </a>
-
 </nav>
 
-
 <section class="hero">
-
     <div class="hero-content">
-
         <div class="badge">
-            🤖 AI ANIMAL COMMUNICATION LAB
+            ✨ THE OFFICIAL SILLY PET TRANSLATOR ✨
         </div>
 
         <h1>
-            What if animals
-            <span>could finally explain themselves?</span>
+            What if your pets
+            <span>could finally talk back? 🐶💬</span>
         </h1>
 
         <p>
-            Upload an animal sound and let our highly
-            questionable AI attempt to translate it
-            into human language.
+            Ever wonder why your dog barks at the fridge or your cat screams at 3 AM? 
+            Upload their sound and let our quirky cartoon AI decode their most dramatic pet thoughts into hilarious human words!
         </p>
 
-        <a href="/translator"
-           class="primary-btn">
-
-            🐾 START TRANSLATING
-
+        <a href="/translator" class="primary-btn">
+            🐾 START TRANSLATING 🦴
         </a>
-
     </div>
 
-
     <div class="animal-card">
-
-        <div class="animal">
+        <div class="animal" id="heroAnimal">
             🐶
         </div>
 
         <div class="sound-wave">
-
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-
         </div>
 
         <p>
-            "Someone is at the door."
+            "Woof! Did someone say TREATS?! 🍪"
         </p>
-
     </div>
-
 </section>
 
-
 <section class="features">
-
     <div class="feature">
         🎙️
-        <h3>Hear</h3>
-        <p>Analyze animal sounds.</p>
+        <h3>Hear the Drama</h3>
+        <p>Catch every bark, meow, chirp, or moo with precision squeak analysis!</p>
     </div>
 
     <div class="feature">
         🧠
-        <h3>Think</h3>
-        <p>AI interprets the behavior.</p>
+        <h3>Pet Brain Logic</h3>
+        <p>Deciphering secret furry thoughts using questionable cartoon AI intelligence!</p>
     </div>
 
     <div class="feature">
         💬
-        <h3>Translate</h3>
-        <p>Convert it into human language.</p>
+        <h3>Spill the Tea</h3>
+        <p>Hear what your pet is actually saying out loud in hilarious Malayalam audio!</p>
     </div>
-
 </section>
 
 </body>
-
 </html>

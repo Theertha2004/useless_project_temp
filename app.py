@@ -1,9 +1,17 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
+import sys
 import random
 import librosa
 import numpy as np
 from gtts import gTTS
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 app = Flask(__name__)
 

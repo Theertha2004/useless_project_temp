@@ -3,81 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AnimalTalk AI</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <title>🐾 Cute Pet Translator - AnimalTalk AI ✨</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
 <nav>
-
     <div class="logo">
-        🐾 AnimalTalk AI
+        <span>🐾</span> AnimalTalk AI
     </div>
-
     <a href="/">
-        Home
+        🏡 Home
     </a>
-
 </nav>
-
 
 <div class="translator-container">
 
     <div class="badge">
-        🧠 ANIMAL COMMUNICATION SYSTEM
+        🐾 CARTOON PET DECODER 3000 ✨
     </div>
 
     <h1>
-        What is your animal saying?
+        What is your fur baby saying? 🐶💬
     </h1>
 
     <p class="subtitle">
-        Upload an animal sound and let AI decode it.
+        Upload their barks, meows, chirps, or moos and let AI translate!
     </p>
-
 
     <!-- ========================= -->
     <!-- INPUT SECTION -->
     <!-- ========================= -->
-
     <div id="inputSection">
 
-        <form id="translatorForm"
-              enctype="multipart/form-data">
+        <form id="translatorForm" enctype="multipart/form-data">
 
-            <label>
-                🐾 Select Animal
+            <label for="animal">
+                🐾 Which Pet Are We Talking To?
             </label>
 
             <select name="animal" id="animal">
-
-                <option value="dog">
-                    🐶 Dog
-                </option>
-
-                <option value="cat">
-                    🐱 Cat
-                </option>
-
-                <option value="bird">
-                    🐦 Bird
-                </option>
-
-                <option value="cow">
-                    🐮 Cow
-                </option>
-
+                <option value="dog" selected>🐶 Doggo (Bark / Woof)</option>
+                <option value="cat">🐱 Kitty (Meow / Purr)</option>
+                <option value="bird">🐦 Birb (Chirp / Tweet)</option>
+                <option value="cow">🐮 Cow (Moo / Nom)</option>
             </select>
 
-
-            <label>
-                🎙️ Upload Animal Sound
+            <label for="audio">
+                🎙️ Upload Pet Audio Sound
             </label>
 
             <input
@@ -88,124 +63,88 @@
                 required
             >
 
-
-            <label>
-                📝 What was happening? <span>(optional)</span>
+            <label for="context">
+                📝 What Was Happening? <span>(Optional funny clues)</span>
             </label>
 
             <textarea
                 name="context"
                 id="context"
-                placeholder="Example: My dog was barking at the door..."
+                placeholder="Example: Barking frantically at a suspicious plastic bag on the rug..."
             ></textarea>
-
 
             <button
                 type="submit"
                 class="primary-btn">
-
-                🧠 ANALYZE SOUND
-
+                🐾 DECODE PET SOUND 🦴
             </button>
 
         </form>
 
     </div>
 
-
     <!-- ========================= -->
     <!-- LOADING SECTION -->
     <!-- ========================= -->
-
-    <div id="loading"
-         class="loading hidden">
+    <div id="loading" class="loading hidden">
 
         <div class="ai-orb">
-            🧠
+            🐾
         </div>
 
         <h2>
-            AI IS LISTENING...
+            SNIFFING OUT THE SOUND... 🐶
         </h2>
 
         <p>
-            Decoding animal communication
+            Translating pet drama into human speech... please wait! 🦴
         </p>
 
         <div class="loading-bars">
-
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-
         </div>
 
     </div>
 
-
     <!-- ========================= -->
     <!-- RESULT SECTION -->
     <!-- ========================= -->
+    <div id="result" class="result hidden">
 
-    <div id="result"
-         class="result hidden">
-
-
-        <div id="animalEmoji"
-             class="result-animal">
+        <div id="animalEmoji" class="result-animal">
             🐶
         </div>
 
-
         <h2>
-            TRANSLATION COMPLETE
+            🎉 PET THOUGHTS DECODED! 🎉
         </h2>
 
-
         <div class="emotion-box">
-
-            <span>
-                DETECTED MOOD
-            </span>
-
-            <strong id="emotion">
-            </strong>
-
+            <span>DETECTED MOOD</span>
+            <strong id="emotion"></strong>
         </div>
 
-
         <!-- VOICE AREA -->
-
         <div class="voice-box">
 
-            <div class="speaker-icon"
-                 id="speakerIcon">
-
-                🔊
-
+            <div class="speaker-icon" id="speakerIcon">
+                📻
             </div>
-
 
             <h3>
-                YOUR ANIMAL IS SPEAKING...
+                YOUR PET IS SPEAKING! 🐾
             </h3>
 
-
-            <p class="voice-status"
-               id="voiceStatus">
-
+            <p class="voice-status" id="voiceStatus">
                 Preparing Malayalam translation...
-
             </p>
 
-
             <!-- Animated sound waves -->
-
-            <div class="voice-animation"
-                 id="voiceAnimation">
-
+            <div class="voice-animation" id="voiceAnimation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -213,47 +152,34 @@
                 <span></span>
                 <span></span>
                 <span></span>
-
             </div>
 
-
             <!-- Manual replay -->
-
             <button
+                type="button"
                 id="speakButton"
                 class="voice-button">
-
                 🔊 PLAY AGAIN
-
             </button>
 
         </div>
 
-
         <p class="disclaimer">
-
-            🤖 AI-generated humorous interpretation.
-            Not an actual animal translation.
-
+            🐾 100% certified cartoon pet comedy! No actual pets were interrogated.
         </p>
 
-
         <button
+            type="button"
             class="secondary-btn"
             onclick="location.reload()">
-
-            🐾 TRANSLATE ANOTHER SOUND
-
+            🐾 TRANSLATE ANOTHER SOUND ✨
         </button>
 
     </div>
 
 </div>
 
-
-<script src="{{ url_for('static', filename='script.js') }}">
-</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
-
 </html>
