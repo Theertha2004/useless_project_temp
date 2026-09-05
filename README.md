@@ -4,26 +4,26 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [404]
 
 
 ### Team Members
 
-- Team Lead:Anamtheerthame - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead:Anam mansur - [SSET]
+- Member 2: [Theertha manoj] - [SSET]
+
 
 ### Project Description
 
-[2-3 lines about what your project does]
+[AI Coin Flip Predictor is a fun and experimental AI-based project that predicts the outcome of a coin toss using factors such as coin type, initial side, flip height, force, and rotation count. The system learns from previous flip results and provides a probability-based prediction, making a simple coin toss unnecessarily intelligent and entertaining.]
 
 ### The Problem (that doesn't exist)
 
-[What ridiculous problem are you solving?]
+[People have been flipping coins for centuries without knowing what the coin will do next. Our project solves this completely unnecessary problem by using AI to analyze coin type, initial side, flip height, force, and rotation count to predict whether the next toss will be Heads or Tails. 🪙🤖]
 
 ### The Solution (that nobody asked for)
 
-[How are you solving it? Keep it fun!]
+[We use AI to turn a completely random coin toss into a serious data-analysis problem. 🤖🪙 The system considers factors like coin type, initial side, flip height, force, rotation count, and previous results to generate a probability-based prediction of Heads or Tails. Because apparently, “just flip the coin” wasn't advanced enough. 😭]
 
 ## Technical Details
 
