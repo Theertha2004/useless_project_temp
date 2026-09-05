@@ -1,209 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+const predictButton =
+    document.getElementById("predictButton");
 
-<head>
-    <meta charset="UTF-8">
+const resultSection =
+    document.getElementById("resultSection");
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+const prediction =
+    document.getElementById("prediction");
 
-    <title>AI Coin Intelligence</title>
+const headsProbability =
+    document.getElementById("headsProbability");
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+const tailsProbability =
+    document.getElementById("tailsProbability");
 
-<body>
+const coin =
+    document.getElementById("coin");
 
-    <div class="container">
+const accuracyMessage =
+    document.getElementById("accuracyMessage");
 
-        <header>
-            <div class="badge">EXPERIMENTAL AI SYSTEM</div>
 
-            <h1>🪙 AI COIN INTELLIGENCE</h1>
+predictButton.addEventListener("click", async function () {
 
-            <p>
-                An unnecessarily advanced prediction system
-                for a simple coin toss.
-            </p>
-        </header>
+    const data = {
 
+        coin_type:
+            document.getElementById("coinType").value,
 
-        <main>
+        initial_side:
+            document.getElementById("initialSide").value,
 
-            <section class="card">
+        height:
+            document.getElementById("height").value,
 
-                <h2>Flip Parameters</h2>
+        force:
+            document.getElementById("force").value,
 
-                <div class="form-grid">
+        rotations:
+            document.getElementById("rotations").value
 
-                    <div class="input-group">
+    };
 
-                        <label>Coin Type</label>
 
-                        <select id="coinType">
+    predictButton.innerText =
+        "🧠 ANALYZING...";
 
-                            <option value="₹1">₹1 Coin</option>
-                            <option value="₹2">₹2 Coin</option>
-                            <option value="₹5">₹5 Coin</option>
-                            <option value="₹10">₹10 Coin</option>
 
-                        </select>
+    predictButton.disabled = true;
 
-                    </div>
 
+    try {
 
-                    <div class="input-group">
+        const response =
+            await fetch("/predict", {
 
-                        <label>Initial Side Facing Up</label>
+                method: "POST",
 
-                        <select id="initialSide">
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
 
-                            <option value="Heads">Heads</option>
-                            <option value="Tails">Tails</option>
+                body: JSON.stringify(data)
 
-                        </select>
+            });
 
-                    </div>
 
+        const result =
+            await response.json();
 
-                    <div class="input-group">
 
-                        <label>Flip Height (cm)</label>
+        resultSection.classList.remove("hidden");
 
-                        <input
-                            type="number"
-                            id="height"
-                            value="50"
-                            min="1"
-                            max="200"
-                        >
 
-                    </div>
+        prediction.innerText =
+            result.prediction;
 
 
-                    <div class="input-group">
+        headsProbability.innerText =
+            result.heads_probability + "%";
 
-                        <label>Flip Force</label>
 
-                        <select id="force">
+        tailsProbability.innerText =
+            result.tails_probability + "%";
 
-                            <option value="Low">Low</option>
-                            <option value="Medium" selected>Medium</option>
-                            <option value="High">High</option>
 
-                        </select>
+        coin.style.transform =
+            "rotateY(720deg)";
 
-                    </div>
 
+        setTimeout(() => {
 
-                    <div class="input-group">
+            coin.style.transform =
+                "rotateY(0deg)";
 
-                        <label>Rotation Count</label>
+        }, 800);
 
-                        <input
-                            type="number"
-                            id="rotations"
-                            value="5"
-                            min="1"
-                            max="100"
-                        >
 
-                    </div>
+    }
 
-                </div>
+    catch (error) {
 
+        alert(
+            "Something went wrong. Please try again."
+        );
 
-                <button id="predictButton">
-                    🧠 ANALYZE FLIP
-                </button>
+        console.error(error);
 
-            </section>
+    }
 
 
-            <section
-                id="resultSection"
-                class="card result-card hidden"
-            >
+    predictButton.innerText =
+        "🧠 ANALYZE FLIP";
 
-                <div class="coin" id="coin">
-                    🪙
-                </div>
 
-                <p class="small-title">
-                    AI PREDICTION
-                </p>
+    predictButton.disabled = false;
 
-                <h2 id="prediction">
-                    —
-                </h2>
+});
 
-                <div class="probabilities">
 
-                    <div>
-                        <span>HEADS</span>
-                        <strong id="headsProbability">
-                            0%
-                        </strong>
-                    </div>
+async function submitActualResult(actualResult) {
 
-                    <div>
-                        <span>TAILS</span>
-                        <strong id="tailsProbability">
-                            0%
-                        </strong>
-                    </div>
+    const response =
+        await fetch("/result", {
 
-                </div>
+            method: "POST",
 
+            headers: {
+                "Content-Type":
+                    "application/json"
+            },
 
-                <div class="divider"></div>
+            body: JSON.stringify({
+                actual_result: actualResult
+            })
 
+        });
 
-                <p>
-                    Now physically flip your coin.
-                </p>
 
+    const result =
+        await response.json();
 
-                <div class="actual-buttons">
 
-                    <button
-                        onclick="submitActualResult('Heads')"
-                    >
-                        HEADS
-                    </button>
+    if (result.success) {
 
-                    <button
-                        onclick="submitActualResult('Tails')"
-                    >
-                        TAILS
-                    </button>
+        const predicted =
+            prediction.innerText;
 
-                </div>
 
+        if (predicted === actualResult) {
 
-                <div id="accuracyMessage"></div>
+            accuracyMessage.innerText =
+                "🏆 PREDICTION CORRECT! AI HAS ACHIEVED ABSOLUTELY NOTHING.";
 
-            </section>
+        }
 
-        </main>
+        else {
 
+            accuracyMessage.innerText =
+                "❌ PREDICTION FAILED. YOU COULD HAVE JUST USED A COIN.";
 
-        <footer>
+        }
 
-            <p>
-                ⚠️ Experimental system — because apparently
-                flipping a coin wasn't complicated enough.
-            </p>
+    }
 
-        </footer>
-
-    </div>
-
-
-    <script src="{{ url_for('static', filename='script.js') }}">
-    </script>
-
-</body>
-
-</html>
+}
