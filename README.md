@@ -8,13 +8,13 @@
 
 ### Team Members
 
-- Team Lead: [Name] - [College]
+- Team Lead:Anamtheerthame - [College]
 - Member 2: [Name] - [College]
 - Member 3: [Name] - [College]
 
 ### Project Description
 
-[2-3 lines about what your projeqweweeect does]
+[2-3 lines about what your project does]
 
 ### The Problem (that doesn't exist)
 
