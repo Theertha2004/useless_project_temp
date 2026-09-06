@@ -11,26 +11,29 @@
 - 
 
 ### Project Description
-[2-3 lines about what your project does]
+[Project Description
+An Animal Sound Translator that analyzes animal sounds and converts them into understandable human-language messages. It uses sound classification to identify the animal and interpret what the sound might mean.
+The Problem (that doesn't exist)
+Animals keep making mysterious noises, and humans have absolutely no idea what they are saying. 🐶🐱]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[Problem: We need to understand whether an animal is saying “I'm hungry”, “Go away!”, or simply “WOOF WOOF” for no reason.]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[The Solution (that nobody asked for)
+We created an Animal Sound Translator that listens to animal sounds and attempts to translate them into human-readable messages!]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+ Python
+- Streamlit
+- Librosa,NumPySckitlearn,Soundfile
+- VScode,Git and Github
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+laptop
+microphone
 
 ### Implementation
 For Software:
