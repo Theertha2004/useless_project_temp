@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
+import base64
 import os
 import sys
 import random
+import tempfile
 import librosa
 import numpy as np
 from gtts import gTTS
@@ -15,8 +17,12 @@ if sys.platform == "win32":
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = "uploads"
-AUDIO_FOLDER = "generated_audio"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IS_VERCEL = os.environ.get("VERCEL", "").lower() in ("1", "true")
+RUNTIME_DIR = tempfile.gettempdir() if IS_VERCEL else BASE_DIR
+
+UPLOAD_FOLDER = os.path.join(RUNTIME_DIR, "animal2human_uploads")
+AUDIO_FOLDER = os.path.join(RUNTIME_DIR, "animal2human_audio")
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(AUDIO_FOLDER, exist_ok=True)
@@ -439,7 +445,23 @@ def analyze():
 
         if voice_file:
 
-            voice_url = "/audio/" + voice_file
+            if IS_VERCEL:
+                # Vercel storage is temporary and a later request may run in
+                # another function instance, so return the MP3 inline.
+                voice_path = os.path.join(
+                    app.config["AUDIO_FOLDER"],
+                    voice_file
+                )
+
+                with open(voice_path, "rb") as generated_audio:
+                    encoded_audio = base64.b64encode(
+                        generated_audio.read()
+                    ).decode("ascii")
+
+                voice_url = "data:audio/mpeg;base64," + encoded_audio
+
+            else:
+                voice_url = "/audio/" + voice_file
 
         else:
 
