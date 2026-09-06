@@ -80,7 +80,7 @@ Not Applicable. The project is a software-only implementation and does not requi
 
 ## Team Contributions
 [Theertha Mnaoj]: ui interphase,frontent
-- Anam Mansoor]:updations,backend
+- Anam Mansur]:updations,backend
   
 
 ---
