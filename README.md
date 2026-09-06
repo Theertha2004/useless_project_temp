@@ -37,60 +37,51 @@ microphone
 
 ### Implementation
 For Software:
+# Clone the project
+git clone <your-github-repository-url>
+
+# Enter the project folder
+cd <project-folder>
+
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment (Windows)
+venv\Scripts\activate
+
+# Install required dependencies
+pip install -r requirements.txt
 # Installation
-[commands]
+
 
 # Run
-[commands]
+python app.py
 
-### Project Documentation
-For Software:
+
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="1872" height="1040" alt="Screenshot 2026-09-06 074151" src="https://github.com/user-attachments/assets/ac150898-8903-454d-b1ad-3cc367c328f0" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+<img width="1888" height="1085" alt="Screenshot 2026-09-06 074207" src="https://github.com/user-attachments/assets/a6af5a02-a25a-4afe-a2d2-1582ed8e131f" />
+<img width="1831" height="1022" alt="Screenshot 2026-09-06 074253" src="https://github.com/user-attachments/assets/cdebb839-a2af-4799-b713-16a0bb28dd66" />
+
+
+
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+User → Web Interface → Flask Backend → Input Processing → Prediction/AI Module → Result → Web Interface
 
 For Hardware:
+Not Applicable. The project is a software-only implementation and does not require any external hardware or electronic circuit
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+[Theertha Mnaoj]: ui interphase,frontent
+- Anam Mansoor]:updations,backend
+  
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
